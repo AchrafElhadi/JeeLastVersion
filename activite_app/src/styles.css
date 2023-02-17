@@ -1,0 +1,5 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("bootstrap-icons/font/bootstrap-icons.css");
+.backnav {
+    background: linear-gradient(19deg, rgba(13,0,20,1) 0%, rgba(46,119,213,1) 73%);
+}

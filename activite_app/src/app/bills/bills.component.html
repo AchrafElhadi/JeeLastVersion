@@ -1,0 +1,20 @@
+
+<table class="table mt-2" *ngIf="bills" >
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">billing date</th>
+        <th scope="col">customerID</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of bills">
+        <td>{{p.id}}</td>
+        <td>{{p.billingDate}}</td>
+        <td>{{p.customerID}}</td>
+        <td><a routerLink="/billdetail/{{p.id}}" class="btn text-white" style="background-color:#2e77d5">Details</a></td>
+    </tr>
+      
+    </tbody>
+  </table>

@@ -1,0 +1,20 @@
+
+<table class="table mt-2" *ngIf="customers" >
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of customers._embedded.customers">
+        <td>{{p.id}}</td>
+        <td>{{p.name}}</td>
+        <td>{{p.email}}</td>
+        <td><a routerLink="/bills/{{p.id}}" class="btn text-white" style="background-color:#2e77d5">Bills</a></td>
+    </tr>
+      
+    </tbody>
+  </table>

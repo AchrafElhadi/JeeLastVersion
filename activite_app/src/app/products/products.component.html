@@ -1,0 +1,63 @@
+
+<ng-template #error>
+    <p class="text-danger">nothing</p>
+</ng-template>
+<div class="mt-5" *ngIf="products else error">
+<form [formGroup]="searchFromGroup" (ngSubmit)="handleSearchProducts()">
+    <div class="input-group">
+        <label class="input-group-text" >Keyword</label>
+        <input type="text" class="form-control" formControlName="keyword">
+        <button class="btn btn-primary">
+            <i class="bi bi-search"></i>
+        </button>
+  
+    </div>
+</form>
+  
+<table class="table mt-2" >
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Promotion</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of products">
+        <td>{{p.id}}</td>
+        <td>{{p.name}}</td>
+        <td>{{p.price}}</td>
+        <td><i *ngIf="p.promotion" class="bi bi-heart-fill text-success"></i></td>
+        <td><button (click)="handleSetPromotion(p)" [ngClass]="p.promotion==true?'btn btn-danger':'btn btn-success'" >
+           <span *ngIf="p.promotion"> Promo off</span>
+           <span *ngIf="!p.promotion"> Promo on</span>
+
+        </button></td>
+        <td><button class="btn btn-danger" (click)="handleDeleteProduct(p)"><i class="bi bi-trash"></i></button></td>
+    </tr>
+      
+    </tbody>
+  </table>
+  <nav aria-label="Page navigation example">
+    <ul class="pagination">
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+          <span class="sr-only">Previous</span>
+        </a>
+      </li>
+      <li [ngClass]="i==currentPage?'page-item active':'page-item '" *ngFor="let v of [].constructor(this.totalPages);let i=index">
+        <a class="page-link" (click)="gotToNextPage(i)" style="cursor:pointer">{{i+1}}</a></li>
+      
+      <li class="page-item">
+        <a class="page-link"  aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>

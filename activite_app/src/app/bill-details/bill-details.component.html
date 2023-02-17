@@ -1,0 +1,39 @@
+
+
+<div class="row  mt-4">
+  <div class="col">
+    <ul class="list-group">
+      <li class="list-group-item">Billing ID : {{billsdetail.id}}</li>
+      <li class="list-group-item">Billing date : {{billsdetail.billingDate}}</li>
+      <li class="list-group-item">Customer ID : {{billsdetail.customer.id}}</li>
+      <li class="list-group-item">Customer name : {{billsdetail.customer.name}}</li>
+      <li class="list-group-item">Customer email : {{billsdetail.customer.email}}</li>
+    </ul>
+   
+    
+  </div>
+  <div class="col">
+    <table class="table" *ngIf="billsdetail" >
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">quantity</th>
+          <th scope="col">price</th>
+          <th scope="col">product Name</th>
+  
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of billsdetail.productItemsList">
+          <td>{{p.id}}</td>
+          <td>{{p.quantity}}</td>
+          <td>{{p.price}}</td>
+          <td>{{p.productName}}</td>
+      </tr>
+        
+      </tbody>
+    </table>
+  
+  </div>
+</div>
