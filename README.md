@@ -76,3 +76,6 @@ Kafka analytics
 
 ## Producer
 ![produ](https://user-images.githubusercontent.com/22898939/219959698-c4fa7b8c-4400-4121-aa75-638764af5357.JPG)
+## all services
+![docker_desktop](https://user-images.githubusercontent.com/22898939/219980549-e976a122-68bb-46a8-8223-e89e34cb388c.JPG)
+
